@@ -11,7 +11,6 @@ public class InstatiateNumbers : MonoBehaviour
     [SerializeField] private int numbersPlace = 0;
     [SerializeField] private PlayerNum[] playerNum;
 
-
     private string myname;
    
     private void Start()
@@ -29,8 +28,6 @@ public class InstatiateNumbers : MonoBehaviour
                 transparencySprite[i].sprite = transparency.sprite;
                 numbersPlace = 0;
                 Debug.Log("Start Again");
-
-                
             }
 
         }
@@ -49,11 +46,8 @@ public class InstatiateNumbers : MonoBehaviour
             {
                 playerNum[1].playerName();
             }
-
         }
 
     }
-
-    
 
 }

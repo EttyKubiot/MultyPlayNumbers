@@ -13,11 +13,6 @@ public class PlayerData : ScriptableObject
 
     public string PlayerScore => playerScore;
 
-
-    
-    //public string name;
-    //public KeyCode keyCode;
-    //public int playerScore;
 }
 
 

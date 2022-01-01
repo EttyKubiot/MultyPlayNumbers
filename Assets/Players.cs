@@ -7,7 +7,6 @@ public class Players : MonoBehaviour
 {
     [SerializeField] private Text nameText;
    
-
     public void UpdateDisplayUI(PlayerData playerData)
     {
         nameText.text = playerData.PlayerName;
