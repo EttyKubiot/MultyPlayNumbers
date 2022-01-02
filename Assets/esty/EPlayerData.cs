@@ -14,11 +14,4 @@ public class EPlayerData
         keyCode = newkeyCode;
     }
 
-    //public void Clickkkk()
-    //{
-    //    if (Input.GetKeyDown(keyCode))
-    //    {
-    //        Debug.Log(keyCode);
-    //    }
-    //}
 }

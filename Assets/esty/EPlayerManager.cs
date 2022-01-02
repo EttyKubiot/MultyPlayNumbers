@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class EPlayerManager : MonoBehaviour
 {
-    //public EPlayerData player1 = new EPlayerData();
-    //public EPlayerData player2 = new EPlayerData();
-    public List<EPlayerData> players = new List<EPlayerData>();
+    [SerializeField] private EGameManager eGameManager;
 
-    List<KeyCode> myKeys = new List<KeyCode>();
+    public List<EPlayerData> players = new List<EPlayerData>();
+    private List<KeyCode> myKeys = new List<KeyCode>();
+
+    public bool Pressed = false;
 
     void Awake()
     {
-        players.Add(new EPlayerData("0", KeyCode.Alpha0));
-        players.Add(new EPlayerData("1", KeyCode.Alpha1));
+        players.Add(new EPlayerData("Esty", KeyCode.Alpha0));
+        players.Add(new EPlayerData("Etty", KeyCode.Alpha1));
 
         players[0].playerScore = 0;
 
@@ -24,22 +25,24 @@ public class EPlayerManager : MonoBehaviour
     }
 
 
+    void Update()
+    {
+        for (int i = 0; i < myKeys.Count; i++)
+        {
+            if (Input.GetKeyDown(myKeys[i]))
+            {
+                Debug.Log(players[i].name);
+                StartCoroutine(ClickOver());
+                eGameManager.OnClick?.Invoke(i);
+            }
+        } 
+    }
 
-    //void Update()
-    //{
-    //    foreach (KeyCode vKey in myKeys)
-    //    {
-
-    //        if (Input.GetKey(vKey))
-    //        {
-    //            //your code here
-
-    //            Debug.Log(vKey);
-    //        }
-    //    }
-    //}
-
-
+    private IEnumerator ClickOver()
+    {
+        yield return new WaitForSeconds(0.2f);
+        Pressed = false;
+    }
 
 }
 
