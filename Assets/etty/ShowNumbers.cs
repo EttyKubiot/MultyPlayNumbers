@@ -52,6 +52,7 @@ public class ShowNumbers : MonoBehaviour
             transparencySprite[numbersPlace].sprite = numbersSprite[numbersPlace].sprite;
 
             numbersPlace = (numbersPlace + 1) % numbersSprite.Length;
+            Debug.Log("number place is" + numbersPlace);
 
             bplayerManager.players[PlayerIndex].playerScore++;
             Debug.Log($"score{bplayerManager.players[PlayerIndex].name}: " +
